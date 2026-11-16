@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COPRAS 複雜比例評估法 - MCDM 筆記庫</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="top-nav">
+      <a href="../index.html">← 返回方法總覽</a>
+    </nav>
+
+    <div class="method-header">
+      <span class="badge">方案排序</span>
+      <h1>COPRAS（複雜比例評估法）</h1>
+    </div>
+
+    <section class="section-box">
+      <h2>1. 核心概念</h2>
+      <p>COPRAS（Complex Proportional Assessment）是一種透過比例關係評估方案相對重要性的決策方法。不同於需要轉換成本型指標的傳統方法，COPRAS 直接將準則區分為「效益型（越大越好）」與「成本型（越小越好）」兩組各自加總，再透過比例公式算出每個方案的最終效用程度。</p>
+    </section>
+
+    <section class="section-box">
+      <h2>2. 計算步驟</h2>
+      <ol>
+        <li><strong>建立原始決策矩陣</strong>：整理各候選方案在所有準則下的評估值，並標註準則屬性（效益型或成本型）。</li>
+        <li><strong>線性比例正規化</strong>：將每個數值除以該準則所有方案的總和，使各準則總和為 1。</li>
+        <li><strong>建立加權正規化矩陣</strong>：將正規化矩陣乘以各準則的權重值。</li>
+        <li><strong>分別加總效益型與成本型指標</strong>：計算每個方案的效益型加權總和（S+）與成本型加權總和（S-）。</li>
+        <li><strong>計算相對顯著性（Q值）</strong>：結合 S+ 與 S- 的倒數比例，求得各方案的綜合評分 Q。</li>
+        <li><strong>計算效用度（U值）並排序</strong>：以最高 Q 值的方案為 100% 基準，計算其餘方案的相對百分比並排序。</li>
+      </ol>
+    </section>
+
+    <section class="section-box">
+      <h2>3. 優缺點與適用情境</h2>
+      <ul>
+        <li><strong>優點</strong>：不需對成本型準則做倒數或負號轉換，計算過程穩定，且能直接顯示各方案相對於最佳方案的百分比差距。</li>
+        <li><strong>限制</strong>：當成本型指標總和（S-）出現極端接近零的數值時，倒數計算會對結果產生較大波動。</li>
+        <li><strong>適用情境</strong>：工程材料選擇、物流中心選址、多指標績效綜合評比。</li>
+      </ul>
+    </section>
+
+    <footer>
+      MCDM Method Notes · 依照 AGENTS.md 規範建立與維護
+    </footer>
+  </main>
+</body>
+</html>
