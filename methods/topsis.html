@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOPSIS 逼近理想解排序法 - MCDM 筆記庫</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="top-nav">
+      <a href="../index.html">← 返回方法總覽</a>
+    </nav>
+
+    <div class="method-header">
+      <span class="badge">方案排序</span>
+      <h1>TOPSIS（逼近理想解排序法）</h1>
+    </div>
+
+    <section class="section-box">
+      <h2>1. 核心概念</h2>
+      <p>TOPSIS（Technique for Order of Preference by Similarity to Ideal Solution）的核心邏輯是尋找一個「距離正理想解最近，同時距離負理想解最遠」的替代方案。它將所有評估準則轉換為多維空間中的座標，藉由計算幾何距離來排出各方案的優劣順序。</p>
+    </section>
+
+    <section class="section-box">
+      <h2>2. 計算步驟</h2>
+      <ol>
+        <li><strong>建立原始決策矩陣</strong>：列出所有候選方案在各個評估準則下的原始表現數值。</li>
+        <li><strong>向量正規化（Normalization）</strong>：將不同單位的準則數值無量綱化，消除量級差異。</li>
+        <li><strong>計算加權正規化矩陣</strong>：將正規化後的數值乘上各準則對應的權重。</li>
+        <li><strong>決定正理想解（PIS）與負理想解（NIS）</strong>：針對效益型準則取最大值為 PIS、最小值為 NIS；成本型準則則相反。</li>
+        <li><strong>計算歐幾里得距離</strong>：分別求出每個方案到 PIS 與 NIS 的距離。</li>
+        <li><strong>計算相對貼近度（CC值）並排序</strong>：貼近度介於 0 到 1 之間，數值越接近 1 代表該方案越理想。</li>
+      </ol>
+    </section>
+
+    <section class="section-box">
+      <h2>3. 優缺點與適用情境</h2>
+      <ul>
+        <li><strong>優點</strong>：數學邏輯直觀、計算速度快，且能同時考量最好與最壞的極端情況。</li>
+        <li><strong>限制</strong>：本身不包含權重計算機制，通常需搭配 AHP 或熵權法（Entropy）先取得準則權重。</li>
+        <li><strong>適用情境</strong>：供應商評選、系統方案評估、專案投資優先順序排序。</li>
+      </ul>
+    </section>
+
+    <footer>
+      MCDM Method Notes · 依照 AGENTS.md 規範建立與維護
+    </footer>
+  </main>
+</body>
+</html>
